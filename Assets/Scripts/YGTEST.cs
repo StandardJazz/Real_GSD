@@ -65,7 +65,7 @@ public class YGTEST : MonoBehaviour {
 
 			RaycastHit2D hit = GetMouseHit ();
 
-			if (hit.collider.gameObject.tag == "Tent") 
+			if (hit.collider.gameObject.tag == "EvilTent" || hit.collider.gameObject.tag == "NeutralTent") 
 			{
 				target = hit.collider.gameObject;
 				line.SetPosition (1,target.transform.position);	
