@@ -4,7 +4,7 @@ using System.Collections;
 public class YGTEST : MonoBehaviour {
 	//public Vector3 targetPos;
 	//public float speed;
-	[SerializeField]GameObject target;
+	GameObject target;
 	LineRenderer line;
 
 
