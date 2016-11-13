@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\YGTEST.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TroopCrtl.cs">
     <Files>
-      <File FileName="Assets\Scripts\YGTEST.cs" Line="75" Column="47" />
+      <File FileName="Assets\Scripts\YGTEST.cs" Line="7" Column="20" />
+      <File FileName="Assets\Scripts\TroopCrtl.cs" Line="11" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

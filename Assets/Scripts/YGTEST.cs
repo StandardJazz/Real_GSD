@@ -8,10 +8,12 @@ public class YGTEST : MonoBehaviour {
 	LineRenderer line;
 
 
+
+
+
 	void Start()
 	{
 		//targetPos -> 초기값 설정.
-
 
 		//line 설정 
 		line = new GameObject ("Line").AddComponent<LineRenderer> ();
@@ -23,6 +25,8 @@ public class YGTEST : MonoBehaviour {
 		line.material = new Material (Shader.Find ("Diffuse"));
 		line.useWorldSpace = true;
 		line.enabled = false;
+
+
 	}
 
 	public RaycastHit2D GetMouseHit()									//raycast 정의	
@@ -37,7 +41,7 @@ public class YGTEST : MonoBehaviour {
 	// Update is called once per frame
 	public void Update () 
 	{
-
+		
 
 		if (Input.GetMouseButtonDown (0))
 		{										//마우스를 눌렀을때
@@ -69,6 +73,7 @@ public class YGTEST : MonoBehaviour {
 			{
 				target = hit.collider.gameObject;
 				line.SetPosition (1,target.transform.position);	
+
 			} 
 			else 
 			{
