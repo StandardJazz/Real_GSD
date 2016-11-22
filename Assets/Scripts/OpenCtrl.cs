@@ -44,4 +44,10 @@ public class OpenCtrl : MonoBehaviour {
 	{
 		SceneManager.LoadScene ("Stage_Tutorial");
 	}
+
+	//게임화면에서 뒤로 가기 버튼!.
+	public void StageOutButtonClicked(){
+		Application.Quit ();
+		SceneManager.LoadScene ("Stage");
+	}
 }
