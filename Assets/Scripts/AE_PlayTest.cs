@@ -8,16 +8,6 @@ public class AE_PlayTest : MonoBehaviour {
 	LineRenderer line;
 
 
-	 Vector2 StartPosition;
-	 Vector2 EndPosition;
-
-	 GameObject ntl;
-	 GameObject cir;
-
-	 float speed = 3f;
-	 float startTime; 
-	 float distanceLength;
-
 
 
 
@@ -25,9 +15,6 @@ public class AE_PlayTest : MonoBehaviour {
 	{
 		//targetPos -> 초기값 설정.
 
-		cir = GameObject.Find ("Circle");
-		ntl = GameObject.Find ("Neutral");
-		
 		//line 설정 
 		line = new GameObject ("Line").AddComponent<LineRenderer> ();
 		line.SetVertexCount (2);				//line cnt
@@ -39,11 +26,6 @@ public class AE_PlayTest : MonoBehaviour {
 		line.useWorldSpace = true;
 		line.enabled = false;
 
-		startTime = Time.time;
-
-		distanceLength = Vector2.Distance (StartPosition, EndPosition);
-
-
 
 	}
 
@@ -52,15 +34,14 @@ public class AE_PlayTest : MonoBehaviour {
 		Vector2 wp = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		Ray2D ray = new Ray2D (wp, Vector2.zero);
 		RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction);
+
 		return hit;
 	}
 
 	// Update is called once per frame
 	public void Update () 
 	{
-
-		float distCovered = (Time.time - startTime) * speed;
-		float franJourney = distCovered / distanceLength;
+		
 
 		if (Input.GetMouseButtonDown (0))
 		{										//마우스를 눌렀을때
@@ -69,16 +50,12 @@ public class AE_PlayTest : MonoBehaviour {
 
 			if (hit.collider.gameObject == gameObject) 
 			{
-				
-				line.enabled = true;//line이 활성화 (Once Confirm)
-
-				StartPosition = gameObject.transform.position;
-				cir.transform.position = StartPosition;
-
+				line.enabled = true;											//line이 활성화 (Once Confirm)	
 			}
 		}
 		else if (Input.GetMouseButton (0)){ 										//Press mouse button (0)
 			//ray cast notion
+
 			RaycastHit2D hit = GetMouseHit ();
 
 			if (hit.collider != null)
@@ -95,10 +72,7 @@ public class AE_PlayTest : MonoBehaviour {
 			if (hit.collider.gameObject.tag == "EvilTent" || hit.collider.gameObject.tag == "NeutralTent") 
 			{
 				target = hit.collider.gameObject;
-				line.SetPosition (1,target.transform.position);
-				EndPosition = gameObject.transform.position;
-				cir.transform.position = Vector2.Lerp (StartPosition, EndPosition, franJourney);
-			
+				line.SetPosition (1,target.transform.position);	
 
 			} 
 			else 
@@ -108,7 +82,10 @@ public class AE_PlayTest : MonoBehaviour {
 			}
 
 		}
-			
+
+		//float maxDistance = speed * Time.deltaTime;
+		//transform.position = Vector3.MoveTowards (transform.position, targetPos, maxDistance);//출발점, 움직일곳, 속도
+
 
 
 

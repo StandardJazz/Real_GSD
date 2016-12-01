@@ -47,7 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AE_PlayTest.cs" />
      <Compile Include="Assets\Scripts\OpenCtrl.cs" />
-     <Compile Include="Assets\Scripts\TroopCrtl.cs" />
+     <Compile Include="Assets\Scripts\Test.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
