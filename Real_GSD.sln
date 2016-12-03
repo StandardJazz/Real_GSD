@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Real_GSD", "Real_GSD.csproj", "{33CE09F1-3EA7-AC32-DDFA-2CE230934C0B}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{AB475CFA-F6C5-78BD-DA57-EE15B09F65F5}") = "Real_GSD", "Assembly-CSharp.csproj", "{F323AF63-0E67-6B3E-DC1F-CEE7AEBCC80E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{33CE09F1-3EA7-AC32-DDFA-2CE230934C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33CE09F1-3EA7-AC32-DDFA-2CE230934C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33CE09F1-3EA7-AC32-DDFA-2CE230934C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33CE09F1-3EA7-AC32-DDFA-2CE230934C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F323AF63-0E67-6B3E-DC1F-CEE7AEBCC80E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F323AF63-0E67-6B3E-DC1F-CEE7AEBCC80E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F323AF63-0E67-6B3E-DC1F-CEE7AEBCC80E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F323AF63-0E67-6B3E-DC1F-CEE7AEBCC80E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

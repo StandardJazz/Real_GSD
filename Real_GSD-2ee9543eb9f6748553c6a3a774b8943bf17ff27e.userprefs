@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\HyungJoo\16_2 Sem\3. GSD 2\Real_GSD\Assets\Scripts\AE_PlayTest.cs">
+    <Files>
+      <File FileName="..\..\HyungJoo\16_2 Sem\3. GSD 2\Real_GSD\Assets\Scripts\AE_PlayTest.cs" Line="47" Column="16" />
+      <File FileName="Assets\Scripts\AE_PlayTest.cs" Line="20" Column="22" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
