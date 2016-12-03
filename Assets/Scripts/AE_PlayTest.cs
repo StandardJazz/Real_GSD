@@ -4,8 +4,13 @@ using System.Collections;
 public class AE_PlayTest : MonoBehaviour {
 	//public Vector3 targetPos;
 	//public float speed;
-	GameObject target;
+
+	public Transform troop;
+	public GameObject coinPrefab = null;
+
+
 	LineRenderer line;
+
 
 
 
@@ -50,7 +55,9 @@ public class AE_PlayTest : MonoBehaviour {
 
 			if (hit.collider.gameObject == gameObject) 
 			{
-				line.enabled = true;											//line이 활성화 (Once Confirm)	
+				line.enabled = true;
+
+				//line이 활성화 (Once Confirm)	
 			}
 		}
 		else if (Input.GetMouseButton (0)){ 										//Press mouse button (0)
@@ -71,8 +78,12 @@ public class AE_PlayTest : MonoBehaviour {
 
 			if (hit.collider.gameObject.tag == "EvilTent" || hit.collider.gameObject.tag == "NeutralTent") 
 			{
-				target = hit.collider.gameObject;
+				GameObject target =  hit.collider.gameObject;
 				line.SetPosition (1,target.transform.position);	
+
+				GameObject c = Instantiate (coinPrefab, transform.position, transform.rotation) as GameObject;
+				c.transform.SetParent (troop);
+				c.GetComponent<Coin> ().target = target.transform;
 
 			} 
 			else 
