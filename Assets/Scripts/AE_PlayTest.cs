@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class AE_PlayTest : MonoBehaviour {
 	//public Vector3 targetPos;
@@ -7,7 +8,7 @@ public class AE_PlayTest : MonoBehaviour {
 
 	public Transform troop;
 	public GameObject coinPrefab = null;
-
+	public List<Coin> coins = new List<Coin> ();
 
 	LineRenderer line;
 
@@ -42,6 +43,24 @@ public class AE_PlayTest : MonoBehaviour {
 
 		return hit;
 	}
+
+	//setActive 13:59
+	int GetNonActiveCoin()
+	{
+		int index = -1;
+
+		for (int i = 0; i < coins.Count; i++) 
+		{
+			if (!coins [i].gameObject.activeInHierarchy) 
+			{
+				index = i;
+				break;
+			}
+		}
+
+		return index;
+	}
+
 
 	// Update is called once per frame
 	public void Update () 
@@ -81,9 +100,26 @@ public class AE_PlayTest : MonoBehaviour {
 				GameObject target =  hit.collider.gameObject;
 				line.SetPosition (1,target.transform.position);	
 
-				GameObject c = Instantiate (coinPrefab, transform.position, transform.rotation) as GameObject;
-				c.transform.SetParent (troop);
-				c.GetComponent<Coin> ().target = target.transform;
+				//setActive 13:59
+				int coinIndex = GetNonActiveCoin ();
+
+				if (coinIndex == -1) 
+				{
+					GameObject c = Instantiate (coinPrefab, transform.position, transform.rotation) as GameObject;
+					c.transform.SetParent (troop);
+
+					Coin cComponent = c.GetComponent<Coin> ();
+					cComponent.target = target.transform;
+					coins.Add (cComponent);
+				}
+				else
+				{
+					coins [coinIndex].transform.position = transform.position;
+					coins [coinIndex].gameObject.SetActive (true);
+					coins [coinIndex].target = target.transform;
+				}
+
+
 
 			} 
 			else 
